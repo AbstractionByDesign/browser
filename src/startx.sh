@@ -4,6 +4,17 @@ echo "--- List Input Devices ---"
 xinput list
 echo "----- End of List --------"
 
+
+if [[ -z "$FORCE_RESOLUTION" ]]
+then
+  echo "Automatic resolution, listing modes:"
+  xrandr
+else
+  echo "Forcing resolution: $FORCE_RESOLUTION"
+  xrandr -s $FORCE_RESOLUTION
+fi
+
+
 function reverse_window_coordinates () {
   local INPUT=$1
 
@@ -35,6 +46,7 @@ if [[ -z "$WINDOW_SIZE" ]]; then
 else
   echo "Window size set by environment variable to $WINDOW_SIZE"
 fi
+
 
 # rotate screen if env variable is set [normal, inverted, left or right]
 if [[ ! -z "$ROTATE_DISPLAY" ]]; then
@@ -69,6 +81,8 @@ if [[ ! -z "$ROTATE_DISPLAY" ]]; then
     done
   fi
 fi
+
+
 
 # these two lines remove the "restore pages" popup on chromium. 
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' /data/chromium/'Local State' > /dev/null 2>&1 || true 

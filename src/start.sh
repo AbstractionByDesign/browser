@@ -54,6 +54,7 @@ then
     cp -a "/usr/src/build/rpi/99-vc4.conf" "/etc/X11/xorg.conf.d/"
 fi
 
+
 # set up the user data area
 mkdir -p /data/chromium
 chown -R chromium:chromium /data
