@@ -88,6 +88,7 @@ The following environment variables allow configuration of the `browser` block:
 |`TOUCHSCREEN`|`string`|N\A|Name of Touch Input to rotate|
 |`ENABLE_GPU`|`0`, `1`|0|Enables the GPU rendering. Necessary for Pi3B+ to display YouTube videos. <br/> `0` = off, `1` = on|
 |`WINDOW_SIZE`|`x,y`|Detected screen resolution|Sets the browser window size, such as `800,600`. <br/> **Note:** Reverse the dimensions if you also rotate the display to `left` or `right` |
+|`FORCE_RESOLUTION`|`WIDTHxHEIGHT@REFRESH`|Detected resolution see xrandr|Sets the resolution and refresh rate to use. <br/> **Note:** The resolution and refresh rate must be supported by the connected display and the host. |
 |`WINDOW_POSITION`|`x,y`|`0,0`|Specifies the browser window position on the screen|
 |`API_PORT`|port number|5011|Specifies the port number the API runs on|
 |`REMOTE_DEBUG_PORT`|port number|35173|Specifies the port number the chrome remote debugger runs on|
